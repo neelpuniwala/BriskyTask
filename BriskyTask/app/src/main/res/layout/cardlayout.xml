@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="10dp"
+        card_view:cardElevation="5dp"
+        card_view:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Name"
+                android:id="@+id/name"
+                android:layout_marginLeft="5dp"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="user name"
+                android:id="@+id/username"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@id/name"
+                android:textColor="#666"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="email"
+                android:id="@+id/email"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@id/username"
+                android:textColor="#666"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="phone"
+                android:id="@+id/phone"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@id/email"
+                android:textColor="#666"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="website"
+                android:id="@+id/website"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@id/phone"
+                android:textColor="#666"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="street"
+                android:id="@+id/street"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@id/website"
+                android:textColor="#666"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="suite"
+                android:id="@+id/suit"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@id/street"
+                android:textColor="#666"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="city"
+                android:id="@+id/city"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@id/suit"
+                android:textColor="#666"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="zipcode"
+                android:id="@+id/zip"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@id/city"
+                android:textColor="#666"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="companyname"
+                android:id="@+id/cname"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@id/zip"
+                android:textColor="#666"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="catchpharse"
+                android:id="@+id/cp"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@id/cname"
+                android:textColor="#666"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="bs"
+                android:id="@+id/bs"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@id/cp"
+                android:textColor="#666"/>
+
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
