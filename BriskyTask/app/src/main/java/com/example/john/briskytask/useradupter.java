@@ -9,7 +9,7 @@ import android.widget.TextView;
 import java.util.Collections;
 import java.util.List;
 /**
- * Created by Neel on 12/6/2017.
+ * Created by Neel on 12/8/2017.
  */
 
 public class useradupter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -45,13 +45,13 @@ public class useradupter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         myHolder.email.setText("Email: " + current.email);
         myHolder.phone.setText("Phone no. : " + current.phone);
         myHolder.website.setText("Website : "+current.website);
-      /*  myHolder.street.setText("Address : "+current.street);
+        myHolder.street.setText("Address : "+current.street);
         myHolder.suite.setText("                  "+current.suit);
         myHolder.city.setText("                  "+current.city);
         myHolder.zip.setText("                  "+current.zip);
         myHolder.cname.setText("Company : "+current.cname);
         myHolder.cp.setText("                    "+current.catchpharse);
-        myHolder.bs.setText("                    "+current.bs);*/
+        myHolder.bs.setText("                    "+current.bs);
     }
 
     // return total item from List
@@ -63,18 +63,7 @@ public class useradupter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     class MyHolder extends RecyclerView.ViewHolder{
 
-        TextView name;
-        TextView username;
-        TextView email;
-        TextView phone;
-        TextView website;
-        TextView street;
-        TextView suite;
-        TextView city;
-        TextView zip;
-        TextView cname;
-        TextView cp;
-        TextView bs;
+        TextView name, username, email, phone, website, street, suite, city, zip, cname, cp, bs;
 
         // create constructor to get widget reference
         public MyHolder(View itemView) {

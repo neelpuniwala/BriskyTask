@@ -5,22 +5,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.Display;
 import android.widget.Toast;
 
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
-import java.io.*;
-import java.lang.reflect.Array;
-import java.net.*;
+
 import java.util.*;
 import org.json.*;
 
@@ -30,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     private useradupter mAdapter;
     RequestQueue  requestQueue;
     String url;
+
+    List<user> udata=new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,23 +36,44 @@ public class MainActivity extends AppCompatActivity {
         requestQueue = Volley.newRequestQueue(this);
         url = "https://api.myjson.com/bins/gv2on";
 
-        StringRequest getData = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+
+
+        JsonArrayRequest getData = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
             @Override
-            public void onResponse(String response) {
-                GsonBuilder gsonBuilder = new GsonBuilder();
-                Gson gson = gsonBuilder.create();
+            public void onResponse(JSONArray resp) {
+                try {
 
-                List<user> userlist = Arrays.asList(gson.fromJson(response, user[].class));
 
-                List<user> arraylist = new ArrayList<>();
-                for(user model:userlist){
-                    arraylist.add(model);
+                    for(int i=0;i<resp.length();i++){
+                        JSONObject json_data = (JSONObject) resp.get(i);
+
+                        user User = new user();
+                        User.setName(json_data.getString("name"));
+                        User.setUsername(json_data.getString("username"));
+                        User.setEmail(json_data.getString("email"));
+                        User.setPhone(json_data.getString("phone"));
+                        User.setWebsite(json_data.getString("website"));
+                        User.setStreet(json_data.getJSONObject("address").getString("street"));
+                        User.setSuit(json_data.getJSONObject("address").getString("suite"));
+                        User.setCity(json_data.getJSONObject("address").getString("city"));
+                        User.setZip(json_data.getJSONObject("address").getString("zipcode"));
+                        User.setCname(json_data.getJSONObject("company").getString("name"));
+                        User.setCatchpharse(json_data.getJSONObject("company").getString("catchPhrase"));
+                        User.setBs(json_data.getJSONObject("company").getString("bs"));
+                        udata.add(User);
+
+                    }
+
+                    muser = findViewById(R.id.userList);
+                    mAdapter = new useradupter(MainActivity.this, udata);
+                    muser.setAdapter(mAdapter);
+                    muser.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+                }catch(JSONException e){
+                    e.printStackTrace();
+                    Toast.makeText(getApplicationContext(),
+                            "Error: " + e.getMessage(),
+                            Toast.LENGTH_LONG).show();
                 }
-
-                muser = findViewById(R.id.userList);
-                mAdapter = new useradupter(MainActivity.this, arraylist);
-                muser.setAdapter(mAdapter);
-                muser.setLayoutManager(new LinearLayoutManager(MainActivity.this));
             }
         }, new Response.ErrorListener() {
             @Override
@@ -65,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Check Internet Connection", Toast.LENGTH_LONG).show();
             }
         });
+
         requestQueue.add(getData);
     }
 
