@@ -30,8 +30,24 @@
                 android:layout_marginLeft="5dp"
                 />
 
+            <!--<TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="photo"
+                android:id="@+id/photo"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@id/name"
+                android:textColor="#666"/>-->
 
-            <TextView
+            <ImageView
+                android:layout_width="@dimen/thumbnail"
+                android:layout_height="@dimen/thumbnail"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="50dp"
+                android:id="@+id/image"/>
+
+            <!--<TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
@@ -49,7 +65,8 @@
                 android:id="@+id/email"
                 android:layout_marginLeft="5dp"
                 android:layout_below="@id/username"
-                android:textColor="#666"/>
+                android:textColor="#666"/>-->
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -57,9 +74,9 @@
                 android:text="phone"
                 android:id="@+id/phone"
                 android:layout_marginLeft="5dp"
-                android:layout_below="@id/email"
+
                 android:textColor="#666"/>
-            <TextView
+            <!--<TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
@@ -137,7 +154,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_below="@id/cp"
                 android:textColor="#666"/>
-
+-->
 
         </LinearLayout>
 

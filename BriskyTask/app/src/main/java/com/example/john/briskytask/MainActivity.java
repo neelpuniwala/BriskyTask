@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         //new jasonparse().execute();
 
         requestQueue = Volley.newRequestQueue(this);
-        url = "https://api.myjson.com/bins/gv2on";
+        url = "https://api.androidhive.info/json/contacts.json";
 
 
 
@@ -49,17 +49,18 @@ public class MainActivity extends AppCompatActivity {
 
                         user User = new user();
                         User.setName(json_data.getString("name"));
-                        User.setUsername(json_data.getString("username"));
-                        User.setEmail(json_data.getString("email"));
+                        //User.setUsername(json_data.getString("username"));
+                        //User.setEmail(json_data.getString("email"));
+                        User.setPhoto(json_data.getString("image"));
                         User.setPhone(json_data.getString("phone"));
-                        User.setWebsite(json_data.getString("website"));
-                        User.setStreet(json_data.getJSONObject("address").getString("street"));
-                        User.setSuit(json_data.getJSONObject("address").getString("suite"));
-                        User.setCity(json_data.getJSONObject("address").getString("city"));
-                        User.setZip(json_data.getJSONObject("address").getString("zipcode"));
-                        User.setCname(json_data.getJSONObject("company").getString("name"));
-                        User.setCatchpharse(json_data.getJSONObject("company").getString("catchPhrase"));
-                        User.setBs(json_data.getJSONObject("company").getString("bs"));
+                        //User.setWebsite(json_data.getString("website"));
+                        //User.setStreet(json_data.getJSONObject("address").getString("street"));
+                        //User.setSuit(json_data.getJSONObject("address").getString("suite"));
+                        //User.setCity(json_data.getJSONObject("address").getString("city"));
+                        //User.setZip(json_data.getJSONObject("address").getString("zipcode"));
+                        //User.setCname(json_data.getJSONObject("company").getString("name"));
+                        //User.setCatchpharse(json_data.getJSONObject("company").getString("catchPhrase"));
+                        //User.setBs(json_data.getJSONObject("company").getString("bs"));
                         udata.add(User);
 
                     }

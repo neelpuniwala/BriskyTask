@@ -7,7 +7,7 @@ package com.example.john.briskytask;
 
 public class user {
 
-    public String name, username, email, phone, website, street, suit, city, zip, cname, catchpharse, bs;
+    public String name, username, email, phone, website, street, suit, city, zip, cname, catchpharse, bs, photo;
 
     public void setName(String name) {
         this.name = name;
@@ -19,6 +19,10 @@ public class user {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
     public void setPhone(String phone) {

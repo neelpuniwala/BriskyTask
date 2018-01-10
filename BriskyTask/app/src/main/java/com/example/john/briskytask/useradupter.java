@@ -1,13 +1,20 @@
 package com.example.john.briskytask;
 
+
+
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.Collections;
 import java.util.List;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+
 /**
  * Created by Neel on 12/8/2017.
  */
@@ -41,17 +48,21 @@ public class useradupter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         MyHolder myHolder= (MyHolder) holder;
         user current=data.get(position);
         myHolder.name.setText(current.name);
-        myHolder.username.setText("Username: " + current.username);
-        myHolder.email.setText("Email: " + current.email);
+        //myHolder.photo.setText("Username: " + current.photo);
+
+        Glide.with(context).load(current.photo).apply(RequestOptions.circleCropTransform()).into(myHolder.image);
+
+        //myHolder.username.setText("Username: " + current.username);
+        //myHolder.email.setText("Email: " + current.email);
         myHolder.phone.setText("Phone no. : " + current.phone);
-        myHolder.website.setText("Website : "+current.website);
-        myHolder.street.setText("Address : "+current.street);
-        myHolder.suite.setText("                  "+current.suit);
-        myHolder.city.setText("                  "+current.city);
-        myHolder.zip.setText("                  "+current.zip);
-        myHolder.cname.setText("Company : "+current.cname);
-        myHolder.cp.setText("                    "+current.catchpharse);
-        myHolder.bs.setText("                    "+current.bs);
+        //myHolder.website.setText("Website : "+current.website);
+        //myHolder.street.setText("Address : "+current.street);
+        //myHolder.suite.setText("                  "+current.suit);
+        //myHolder.city.setText("                  "+current.city);
+        //myHolder.zip.setText("                  "+current.zip);
+        //myHolder.cname.setText("Company : "+current.cname);
+        //myHolder.cp.setText("                    "+current.catchpharse);
+        //myHolder.bs.setText("                    "+current.bs);
     }
 
     // return total item from List
@@ -63,23 +74,25 @@ public class useradupter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     class MyHolder extends RecyclerView.ViewHolder{
 
-        TextView name, username, email, phone, website, street, suite, city, zip, cname, cp, bs;
-
+        TextView name, username, email, phone, website, street, suite, city, zip, cname, cp, bs, photo;
+        ImageView image;
         // create constructor to get widget reference
         public MyHolder(View itemView) {
             super(itemView);
             name= (TextView) itemView.findViewById(R.id.name);
-            username =(TextView) itemView.findViewById(R.id.username);
-            email = (TextView) itemView.findViewById(R.id.email);
+            image = (ImageView) itemView.findViewById(R.id.image);
+            //photo= (TextView) itemView.findViewById(R.id.photo);
+            //username =(TextView) itemView.findViewById(R.id.username);
+            //email = (TextView) itemView.findViewById(R.id.email);
             phone = (TextView) itemView.findViewById(R.id.phone);
-            website = (TextView) itemView.findViewById(R.id.website);
-            street = (TextView) itemView.findViewById(R.id.street);
-            suite = (TextView) itemView.findViewById(R.id.suit);
-            city = (TextView) itemView.findViewById(R.id.city);
-            zip = (TextView) itemView.findViewById(R.id.zip);
-            cname = (TextView) itemView.findViewById(R.id.cname);
-            cp = (TextView) itemView.findViewById(R.id.cp);
-            bs = (TextView) itemView.findViewById(R.id.bs);
+            //website = (TextView) itemView.findViewById(R.id.website);
+            //street = (TextView) itemView.findViewById(R.id.street);
+            //suite = (TextView) itemView.findViewById(R.id.suit);
+            //city = (TextView) itemView.findViewById(R.id.city);
+            //zip = (TextView) itemView.findViewById(R.id.zip);
+            //cname = (TextView) itemView.findViewById(R.id.cname);
+            //cp = (TextView) itemView.findViewById(R.id.cp);
+            //bs = (TextView) itemView.findViewById(R.id.bs);
         }
 
     }
