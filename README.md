@@ -1,2 +1,2 @@
 # BriskyTask
-Android RecyclerView,Card View and Json parsing using volley
+Android RecyclerView, Card View, Glide Image lib and Json parsing using volley
